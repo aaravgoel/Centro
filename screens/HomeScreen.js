@@ -1,10 +1,20 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, Image } from 'react-native';
+import { withSafeAreaInsets } from 'react-native-safe-area-context';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Fragment } from 'react/cjs/react.production.min';
+//import listingsData from '../assets/data/listingsData';
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <Fragment>
+    <SafeAreaView style={{ flex:0, backgroundColor: 'white' }} />
       <SafeAreaView style={styles.container}>
+        <View style={styles.headerWrapper}>
+          <Image source={require('../assets/Centro.png')} style={styles.profileImage}/>
+          <Ionicons name="ios-menu-outline" size = {30} onPress={() => navigation.navigate('Settings')}/>
+        </View>
+
         <ScrollView style={styles.scrollView}>
           <Text style={styles.text}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -17,13 +27,27 @@ export default function HomeScreen() {
           </Text>
         </ScrollView>
       </SafeAreaView>
-    </View>
+    </Fragment>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  headerWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingBottom: 10,
+    paddingHorizontal: 20,
+    backgroundColor: 'white',
+    borderBottomColor: 'lightgrey',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  profileImage: {
+    width: 120,
+    height: 28,
   },
   scrollView: {
     marginHorizontal: 20,

@@ -13,11 +13,10 @@ import SettingsScreen from './screens/SettingsScreen';
 
 const Tab = createBottomTabNavigator();
 
-export default function App() {
+export default function App(a) {
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
-      
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -29,9 +28,8 @@ export default function App() {
                 : 'ios-home-outline';
             } else if (route.name === 'Search') {
               iconName = focused
-                ? 'ios-search-circle'
-                : 'ios-search-circle-outline';
-              size = 30;
+                ? 'ios-search'
+                : 'ios-search-outline';
             } else if (route.name === 'Chat') {
               iconName = focused
                 ? 'ios-chatbubble'
@@ -40,12 +38,10 @@ export default function App() {
               iconName = focused
                 ? 'ios-add-circle'
                 : 'ios-add-circle-outline';
-              size = 30;
             } else if (route.name === 'Profile') {
               iconName = focused
-                ? 'ios-person-circle'
-                : 'ios-person-circle-outline';
-              size = 30;
+                ? 'ios-person'
+                : 'ios-person-outline';
             } else if (route.name === 'Settings') {
               iconName = focused
                 ? 'ios-settings'
@@ -59,12 +55,12 @@ export default function App() {
           tabBarInactiveTintColor: 'gray',
         })}
       >
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Search" component={SearchScreen} />
-        <Tab.Screen name="Chat" component={ChatScreen} />
-        <Tab.Screen name="Post" component={PostScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+        <Tab.Screen name="Search" component={SearchScreen} options={{ headerShown: false }} />
+        <Tab.Screen name="Chat" component={ChatScreen} options={{ headerShown: false }} />
+        <Tab.Screen name="Post" component={PostScreen} options={{ headerShown: false }} />
+        <Tab.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
+        <Tab.Screen name="Settings" component={SettingsScreen} options={{ headerShown: false }} />
       </Tab.Navigator>
     </NavigationContainer>
   );
