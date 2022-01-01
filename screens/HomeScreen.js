@@ -5,6 +5,7 @@ import { Fragment } from 'react/cjs/react.production.min';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import listingsData from '../assets/data/listingsData';
+import { BottomTabBar } from '@react-navigation/bottom-tabs';
 
 export default function HomeScreen({ navigation }) {
 
@@ -13,15 +14,15 @@ export default function HomeScreen({ navigation }) {
       <View style={styles.listingsItemWrapper}>
         <View style={styles.listingsItemSellerWrapper}>
           <Image source={item.sellerImage} style={styles.listingsItemSellerImage} />
-          <Text style={styles.listingsItemSellerName}> {item.sellerName} </Text>
+          <Text style={styles.listingsItemSellerName}>{item.sellerName}</Text>
         </View>
         <Image source={item.image} style={styles.listingsItemImage} />
         <View style={styles.listingsActionsWrapper}>
-          <Ionicons name="ios-heart-outline" size={20} style={styles.listingsActionsLikeIcon}/>
-          <Ionicons name="ios-chatbubble-outline" size={20} style={styles.listingsActionsChatIcon}/>
-          <Ionicons name="ios-bookmark-outline" size={20} style={styles.listingsActionsBookmark}/>
+          <Ionicons name="ios-heart-outline" size={25} style={styles.listingsActionsLikeIcon}/>
+          <Ionicons name="ios-chatbubble-outline" size={25} style={styles.listingsActionsChatIcon}/>
+          <Ionicons name="ios-bookmark-outline" size={25} style={styles.listingsActionsBookmark}/>
         </View>
-        <Text style={styles.listingsItemDescription}> {item.description} </Text>
+        <Text style={styles.listingsItemDescription}>{item.description}</Text>
       </View>
     );
   };
@@ -57,9 +58,10 @@ const styles = StyleSheet.create({
     height: 28,
   },
   listingsItemWrapper: {
-    margin: 5,
+    marginBottom: 10,
   },
   listingsItemSellerWrapper: {
+    margin: 10,
     flexDirection: 'row',
     alignItems: 'center',
   },
@@ -68,25 +70,27 @@ const styles = StyleSheet.create({
     height: 40,
   },
   listingsItemSellerName: {
+    marginLeft: 10,
     fontSize: 20,
   },
   listingsItemImage: {
     width: '100%',
-    marginTop: 5,
   },
   listingsItemDescription: {
-    
+    marginLeft: 10,
+    marginRight: 10,
   },
   listingsActionsWrapper: {
     flexDirection: 'row',
   },
   listingsActionsLikeIcon: {
-
+    marginLeft: 7,
+    margin: 5,
   },
   listingsActionsChatIcon: {
-
+    margin: 5,
   },
   listingsActionsBookmark: {
-
+    margin: 5,
   },
 });
