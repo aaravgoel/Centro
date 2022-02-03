@@ -4,7 +4,9 @@ const listingsData = [
         image: require('../images/Car.png'),
         sellerImage: require('../images/Avatar.png'),
         sellerName: 'Brandon Joo',
-        description: 'Selling this car for $100 message me if interested and we can arrange a sale in chat',
+        title: 'Honda Civic',
+        description: 'Used for 7,000 miles. Good condition and ...',
+        price: 100,
         selected: true,
     },
     {
@@ -12,7 +14,9 @@ const listingsData = [
         image: require('../images/Car.png'),
         sellerImage: require('../images/Avatar.png'),
         sellerName: 'Brandon Joo',
-        description: 'Selling this car for $100 message me if interested and we can arrange a sale in chat',
+        title: 'Honda Civic',
+        description: 'Used for 7,000 miles. Good condition and ...',
+        price: 100,
         selected: false,
     },
     {
@@ -20,7 +24,9 @@ const listingsData = [
         image: require('../images/Car.png'),
         sellerImage: require('../images/Avatar.png'),
         sellerName: 'Brandon Joo',
-        description: 'Selling this car for $100 message me if interested and we can arrange a sale in chat',
+        title: 'Honda Civic',
+        description: 'Used for 7,000 miles. Good condition and ...',
+        price: 100,
         selected: false,
     },
 ];
