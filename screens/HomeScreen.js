@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, Image, FlatList, View, SafeAreaView, Pressable, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, Image, FlatList, View, SafeAreaView, Pressable} from 'react-native';
 import { Fragment } from 'react/cjs/react.production.min';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -49,7 +49,12 @@ export default function HomeScreen({ navigation }) {
           <Text style={styles.listingsItemTitle}>{item.title}</Text>
           <Text style={styles.listingsItemPrice}>{'$' + item.price}</Text>
         </View>
-        <Text style={styles.listingsItemDescription}>{ item.description}</Text>
+        <Text style={styles.listingsItemDescription}>{item.description}</Text>
+        <View style={styles.listingsItemTagsWrapper}>
+          {item.tags.map((tag, key) => (
+            <Text key={key} style={styles.listingItemTags}> {'#' + tag} </Text>)
+          )}
+        </View>
         <View style={styles.listingsItemSellerWrapper}>
           <Image source={item.sellerImage} style={styles.listingsItemSellerImage} />
           <Text style={styles.listingsItemSellerName}>{item.sellerName}</Text>
@@ -139,6 +144,16 @@ const styles = StyleSheet.create({
   listingsItemDescription: {
     marginLeft: 10,
     marginRight: 10,
+  },
+  listingsItemTagsWrapper: {
+    flexDirection: 'row',
+    marginTop: 4,
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  listingItemTags: {
+    fontSize: 16,
+    color: 'grey',
   },
   listingsItemSellerImage: {
     width: 40,
