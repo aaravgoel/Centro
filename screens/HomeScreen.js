@@ -65,14 +65,14 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <Fragment>
-      <SafeAreaView style={{ flex: 0, backgroundColor: 'white' }} />
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView backgroundColor='white' />
+      <SafeAreaView>
         <View style={styles.headerWrapper}>
           <Image source={require('../assets/images/Centro.png')} style={styles.headerImage} />
           <Ionicons name="ios-menu-outline" size={30} color={'grey'} onPress={() => navigation.navigate('Settings')} />
         </View>
 
-        <FlatList data={listingsData} renderItem={renderListingItem} keyExtractor={item => item.id} showsHorizontalScrollIndicator={false} />
+        <FlatList data={listingsData} renderItem={renderListingItem} keyExtractor={item => item.id} showsHorizontalScrollIndicator={false} contentContainerStyle={styles.flatList}/>
       </SafeAreaView>
     </Fragment>
   );
@@ -92,6 +92,11 @@ const styles = StyleSheet.create({
   headerImage: {
     width: 120,
     height: 28,
+  },
+  flatList: {
+    alignSelf: 'center',
+    width: '100%',
+    maxWidth: 428,
   },
   listingsItemWrapper: {
     borderWidth: 2,
