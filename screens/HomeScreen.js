@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     width: '100%',
     maxWidth: 428,
+    paddingBottom: 90,
   },
   listingsItemWrapper: {
     borderWidth: 2,
