@@ -13,6 +13,8 @@ import PostScreen from './screens/PostScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import SettingsScreen from './screens/SettingsScreen';
 
+import Home from './screens/Home';
+
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +25,7 @@ function HomeTabs() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
+          // navigation bar icons
           if (route.name === 'Home') {
             iconName = focused
               ? 'ios-home'
@@ -65,6 +68,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
+      <Home />
       <Stack.Navigator>
         <Stack.Screen name="HomeTabs" component={HomeTabs} options={{ headerShown: false }} />
         <Stack.Screen name="Settings" component={SettingsScreen} options={{ headerShown: false }} />

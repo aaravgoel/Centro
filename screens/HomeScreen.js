@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, Image, FlatList, View, SafeAreaView, Pressable} from 'react-native';
+import { StyleSheet, Text, Image, FlatList, View, SafeAreaView, Pressable } from 'react-native';
 import { Fragment } from 'react/cjs/react.production.min';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -19,7 +19,7 @@ export default function HomeScreen({ navigation }) {
           <View flexDirection='row'>
             <Pressable>
               {({ pressed }) => {
-                if(pressed) {
+                if (pressed) {
                   isLiked = !isLiked;
                 }
                 return <Ionicons name={isLiked ? 'ios-heart' : 'ios-heart-outline'} size={33} style={styles.listingsActionsIcons} />
@@ -38,14 +38,14 @@ export default function HomeScreen({ navigation }) {
           </View>
           <Pressable>
             {({ pressed }) => {
-              if(pressed) {
+              if (pressed) {
                 isBookmarked = !isBookmarked;
               }
               return <Ionicons name={isBookmarked ? 'ios-bookmark' : 'ios-bookmark-outline'} size={30} style={styles.listingsActionsIcons} />
             }}
           </Pressable>
         </View>
-        <View flexDirection="row">
+        <View flexDirection='row'>
           <Text style={styles.listingsItemTitle}>{item.title}</Text>
           <Text style={styles.listingsItemPrice}>{'$' + item.price}</Text>
         </View>
@@ -69,10 +69,10 @@ export default function HomeScreen({ navigation }) {
       <SafeAreaView>
         <View style={styles.headerWrapper}>
           <Image source={require('../assets/images/Centro.png')} style={styles.headerImage} />
-          <Ionicons name="ios-menu-outline" size={30} color={'grey'} onPress={() => navigation.navigate('Settings')} />
+          <Ionicons name='ios-menu-outline' size={30} color={'grey'} onPress={() => navigation.navigate('Settings')} />
         </View>
 
-        <FlatList data={listingsData} renderItem={renderListingItem} keyExtractor={item => item.id} showsHorizontalScrollIndicator={false} contentContainerStyle={styles.flatList}/>
+        <FlatList data={listingsData} renderItem={renderListingItem} keyExtractor={item => item.id} showsHorizontalScrollIndicator={false} contentContainerStyle={styles.flatList} />
       </SafeAreaView>
     </Fragment>
   );
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     margin: 10,
     backgroundColor: 'white',
     shadowOpacity: 0.2,
-    shadowOffset: {height: 4},
+    shadowOffset: { height: 4 },
   },
   listingsItemSellerWrapper: {
     flexDirection: 'row',
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     shadowOpacity: 0.2,
     shadowRadius: 1,
-    shadowOffset: {height: 2},
+    shadowOffset: { height: 2 },
   },
   listingsItemPrice: {
     marginRight: 10,
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     shadowOpacity: 0.2,
     shadowRadius: 1,
-    shadowOffset: {height: 2},
+    shadowOffset: { height: 2 },
   },
   listingsItemDescription: {
     marginLeft: 10,

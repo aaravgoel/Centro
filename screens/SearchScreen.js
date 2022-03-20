@@ -1,14 +1,15 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, Image } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, Image, SearchBar, useState } from 'react-native';
 import { Fragment } from 'react/cjs/react.production.min';
-//import listingsData from '../assets/data/listingsData';
+
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function SearchScreen({ navigation }) {
+
   return (
     <Fragment>
-    <SafeAreaView style={{ flex:0, backgroundColor: 'white' }} />
-      <SafeAreaView style={styles.container}>
+    <SafeAreaView backgroundColor='white' />
+      <SafeAreaView>
         <View style={styles.headerWrapper}>
           <Image source={require('../assets/images/Centro.png')} style={styles.headerImage}/>
           <Ionicons name="ios-menu-outline" size = {30} color = {'grey'} onPress={() => navigation.navigate('Settings')}/>
@@ -16,7 +17,7 @@ export default function SearchScreen({ navigation }) {
 
         <ScrollView style={styles.scrollView}>
           <Text style={styles.text}>
-            Search!
+            
           </Text>
         </ScrollView>
       </SafeAreaView>
@@ -25,9 +26,6 @@ export default function SearchScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   headerWrapper: {
     flexDirection: 'row',
     justifyContent: 'space-between',
